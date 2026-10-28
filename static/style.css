@@ -1,0 +1,99 @@
+:root {
+  --bg: #fdfcfa;
+  --fg: #1f1f1f;
+  --muted: #6b6b6b;
+  --line: #e6e3de;
+  --accent: #2856c7;
+  --code-bg: #f2f0ec;
+  --pub: #1d7a46;
+  --draft: #9a6a00;
+  --danger: #b3261e;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161616;
+    --fg: #e8e6e3;
+    --muted: #9a9894;
+    --line: #2e2d2b;
+    --accent: #8aa9ff;
+    --code-bg: #232220;
+    --pub: #5fc98a;
+    --draft: #e0b14a;
+    --danger: #ff8a80;
+  }
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 18px/1.65 Charter, "Iowan Old Style", Georgia, serif;
+}
+header.site, main { max-width: 42rem; margin: 0 auto; padding: 0 1rem; }
+header.site {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .5rem;
+  padding-top: 1.5rem; padding-bottom: 1.5rem;
+  font-family: system-ui, sans-serif; font-size: 15px;
+}
+header.site nav { display: flex; gap: 1rem; align-items: center; }
+header.site nav form { margin: 0; }
+.brand { font-weight: 600; color: var(--fg); text-decoration: none; font-size: 17px; }
+main { padding-bottom: 4rem; }
+
+a { color: var(--accent); }
+h1, h2, h3 { line-height: 1.25; }
+h1 { font-size: 2rem; margin: 1rem 0 .25rem; }
+time, .muted { color: var(--muted); font-family: system-ui, sans-serif; font-size: 14px; }
+
+/* index */
+.posts { list-style: none; padding: 0; }
+.posts li { display: flex; justify-content: space-between; gap: 1rem; padding: .6rem 0; border-bottom: 1px solid var(--line); }
+.posts li a { text-decoration: none; }
+.posts li a:hover { text-decoration: underline; }
+.posts time { white-space: nowrap; }
+
+/* article */
+article .body { margin-top: 1.5rem; }
+article .body img { max-width: 100%; height: auto; }
+article .body blockquote { margin: 1rem 0; padding-left: 1rem; border-left: 3px solid var(--line); color: var(--muted); }
+article .body code { background: var(--code-bg); padding: .1em .3em; border-radius: 4px; font-size: .88em; }
+article .body pre { background: var(--code-bg); padding: 1rem; border-radius: 6px; overflow-x: auto; }
+article .body pre code { background: none; padding: 0; }
+article .body hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
+
+/* admin */
+.banner { background: var(--code-bg); padding: .5rem .75rem; border-radius: 6px; font-family: system-ui, sans-serif; font-size: 14px; }
+.dash { width: 100%; border-collapse: collapse; font-family: system-ui, sans-serif; font-size: 15px; }
+.dash td { padding: .55rem .25rem; border-bottom: 1px solid var(--line); }
+.dash td:last-child { text-align: right; white-space: nowrap; }
+.tag { font: 600 12px system-ui, sans-serif; text-transform: uppercase; letter-spacing: .03em; }
+.tag.pub { color: var(--pub); }
+.tag.draft { color: var(--draft); }
+.saved { color: var(--pub); font: 13px system-ui, sans-serif; margin-left: auto; }
+
+form.editor, form.login { display: flex; flex-direction: column; gap: .75rem; font-family: system-ui, sans-serif; }
+.editor-head { display: flex; align-items: baseline; gap: .75rem; font-size: 14px; }
+.editor-head h1 { font-size: 1.5rem; margin: 1rem 0 0; }
+input, textarea {
+  font: inherit; color: var(--fg); background: var(--bg);
+  border: 1px solid var(--line); border-radius: 6px; padding: .6rem .75rem; width: 100%;
+}
+input[name=title] { font-size: 1.25rem; font-weight: 600; }
+textarea { font: 15px/1.6 ui-monospace, "SF Mono", Menlo, monospace; resize: vertical; }
+.slug { display: flex; align-items: center; gap: .25rem; color: var(--muted); font-size: 14px; }
+.slug input { padding: .3rem .5rem; font-size: 14px; }
+.hint { margin: -.25rem 0 0; font-size: 13px; }
+.actions { display: flex; gap: .75rem; align-items: center; }
+.login { max-width: 20rem; }
+
+button {
+  font: 600 15px system-ui, sans-serif; cursor: pointer;
+  background: var(--fg); color: var(--bg); border: 1px solid var(--fg);
+  border-radius: 6px; padding: .55rem 1rem;
+}
+button.secondary { background: transparent; color: var(--fg); }
+button.link { background: none; border: 0; padding: 0; color: var(--accent); font-weight: 400; }
+button.link.danger { color: var(--danger); font-size: 14px; margin-top: 2rem; }
+.error { color: var(--danger); margin: 0; }

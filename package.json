@@ -1,0 +1,17 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node --experimental-sqlite --disable-warning=ExperimentalWarning server.js",
+    "dev": "node --experimental-sqlite --disable-warning=ExperimentalWarning --env-file=.env --watch server.js"
+  },
+  "description": "Dead-simple blog: drafts, publishing, Markdown",
+  "dependencies": {
+    "express": "^5.3.0",
+    "marked": "^15.0.12"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=22.5"
+  }
+}
