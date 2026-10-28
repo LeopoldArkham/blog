@@ -31,6 +31,9 @@ Then, in the app's settings:
 
 Click **Deploy**, then log in at `<your domain>/admin`.
 
+The live app is `blog` in the Coolify project **Blog**, and its volume is
+`90ch8tmj0hi7rkzxlpxf6wes-blog-data`, created on 2026-10-28.
+
 ### 2. Deploy on every push
 
 Public repositories don't get automatic deploys. In the app's **Webhooks**
